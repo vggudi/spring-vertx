@@ -17,9 +17,9 @@ import io.vertx.core.Vertx;
 
 @SpringBootApplication
 @Configuration
-@EnableJpaRepositories("com.baeldung.vertxspring.repository")
-@EntityScan("com.baeldung.vertxspring.entity")
-@ComponentScan(basePackages = { "com.baeldung" })
+@EnableJpaRepositories("com.mojro.vertx.repository")
+@EntityScan("com.mojro.vertx.entity")
+@ComponentScan(basePackages = { "com.mojro.vertx.*" })
 
 public class VertxSpringApplication {
 
@@ -36,9 +36,12 @@ public class VertxSpringApplication {
 
 	@PostConstruct
 	public void deployVerticle() {
+		System.out.println("Inside deployVerticle method");
 		final Vertx vertx = Vertx.vertx();
 		vertx.deployVerticle(serverVerticle);
+		System.out.println("Server verticle deployed");
 		vertx.deployVerticle(serviceVerticle);
+		System.out.println("Verticles deployed");
 	}
 
 }

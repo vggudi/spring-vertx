@@ -10,8 +10,8 @@ import io.vertx.ext.web.RoutingContext;
 @Component
 public class ServerVerticle extends AbstractVerticle {
 
-    @Autowired
-    private Integer defaultPort;
+    //@Autowired
+    //private Integer defaultPort;
 
     private void getAllBooksHandler(RoutingContext routingContext) {
         vertx.eventBus()
@@ -40,7 +40,7 @@ public class ServerVerticle extends AbstractVerticle {
 
         vertx.createHttpServer()
             .requestHandler(router::accept)
-            .listen(config().getInteger("http.port", defaultPort));
+            .listen(config().getInteger("http.port", 8080));
     }
 
 }

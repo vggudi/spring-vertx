@@ -27,7 +27,7 @@ public class BookRecipientVerticle extends AbstractVerticle {
         super.start();
         vertx.eventBus()
                 .<String>consumer(GET_ALL_BOOKS)
-                .handler(getAllArticleService(bookService));
+                .handler(getAllBookService(bookService));
     }
 
     private Handler<Message<String>> getAllBookService(BookService service) {

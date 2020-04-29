@@ -1,0 +1,7 @@
+com\mojro\vertx\VertxSpringApplication.class
+com\mojro\vertx\repository\BookRepository.class
+com\mojro\vertx\service\BookService.class
+com\mojro\vertx\entity\Book.class
+com\mojro\vertx\verticles\ServerVerticle.class
+com\mojro\vertx\util\DbBootstrap.class
+com\mojro\vertx\verticles\BookRecipientVerticle.class
